@@ -39,7 +39,7 @@ public class CursoServiceImpl implements CursoService {
     @Override
     public List<Curso> getCoursesContainingWord(String word) {
         return cursoRepository.findAll().stream()
-                .filter((curso -> curso.getNombre().toLowerCase().contains(word)))
+                .filter((curso -> curso.getNombre().toLowerCase().contains(word.toLowerCase())))
                 .toList();
     }
 }
